@@ -3,635 +3,435 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Peter Tinashe Mundowa — Data Scientist & AI Agent Builder from Zimbabwe. Building intelligent systems for African enterprises.">
+<meta name="description" content="Peter Tinashe Mundowa — Data Scientist & AI Agent Builder, Zimbabwe. Building intelligent systems for African enterprises.">
+<meta name="keywords" content="Peter Tinashe Mundowa, Data Scientist Zimbabwe, AI Agent Builder Africa, MindStudio, SAP Business One AI, Zindi Ambassador Zimbabwe">
 <meta property="og:title" content="Peter Tinashe Mundowa — Data Scientist & AI Builder">
 <meta property="og:description" content="Building AI agents, data pipelines, and intelligent systems for African enterprises. Zindi Ambassador. Zimbabwe.">
-<title>Peter Tinashe Mundowa</title>
+<title>Peter Tinashe Mundowa — Data Scientist &amp; AI Builder · Zimbabwe</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:       #0e0e1c;
-    --bg2:      #13132a;
-    --surface:  #181830;
-    --card:     #1c1c35;
-    --card2:    #212142;
-    --border:   rgba(255,255,255,0.08);
-    --border2:  rgba(255,255,255,0.12);
-    --ink:      #f0f0f8;
-    --ink2:     rgba(240,240,248,0.65);
-    --muted:    rgba(240,240,248,0.35);
-    --amber:    #f0970a;
-    --amber2:   #ffb340;
-    --amber-dim:rgba(240,151,10,0.12);
-    --green:    #39d98a;
-    --serif:    'DM Serif Display', serif;
-    --mono:     'IBM Plex Mono', monospace;
-    --sans:     'Outfit', sans-serif;
-  }
-  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;}
-  ::selection{background:var(--amber);color:#000;}
-
-  /* ── CURSOR ── */
-  *{cursor:none;}
-  .cursor{width:10px;height:10px;background:var(--amber);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:width .18s,height .18s,opacity .18s;mix-blend-mode:screen;}
-  .cursor.big{width:32px;height:32px;margin-left:-11px;margin-top:-11px;opacity:.35;}
-
-  /* ── NAV ── */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 52px;background:rgba(14,14,28,.9);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s;}
-  nav.scrolled{border-color:var(--border);}
-  .nav-logo{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none;letter-spacing:-.01em;}
-  .nav-links{display:flex;gap:32px;align-items:center;}
-  .nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-  .nav-links a:hover{color:var(--ink);}
-  .nav-cta{border:1px solid var(--amber)!important;color:var(--amber)!important;padding:7px 18px!important;transition:all .2s!important;}
-  .nav-cta:hover{background:var(--amber)!important;color:#000!important;}
-
-  /* ── HERO ── */
-  .hero{min-height:100vh;display:grid;grid-template-columns:1fr auto;gap:0;align-items:center;padding:120px 52px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
-
-  /* Animated mesh background */
-  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 20% 50%,rgba(240,151,10,.07) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 80% 20%,rgba(57,217,138,.05) 0%,transparent 70%);pointer-events:none;z-index:0;}
-  /* Grid lines */
-  .hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0;}
-  .hero>*{position:relative;z-index:1;}
-
-  .hero-left{display:flex;flex-direction:column;gap:0;}
-  .hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:32px;animation:fadeUp .7s ease .1s both;}
-  .live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;animation:livepulse 2.2s ease-in-out infinite;}
-  @keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(57,217,138,.5);}60%{box-shadow:0 0 0 8px rgba(57,217,138,0);}}
-  .eyebrow-text{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
-
-  .hero-name{font-family:var(--serif);font-size:clamp(56px,7vw,110px);line-height:.93;letter-spacing:-.035em;white-space:nowrap;animation:fadeUp .8s ease .2s both;}
-  .hero-name em{font-style:italic;color:var(--amber);}
-
-  .hero-tagline{margin-top:28px;font-size:16px;color:var(--ink2);line-height:1.75;font-weight:300;max-width:520px;animation:fadeUp .8s ease .32s both;}
-  .hero-tagline strong{color:var(--ink);font-weight:600;}
-
-  .hero-actions{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;animation:fadeUp .8s ease .44s both;}
-  .btn{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
-  .btn-primary{background:var(--amber);color:#000;font-weight:500;}
-  .btn-primary:hover{background:var(--amber2);}
-  .btn-ghost{border:1px solid var(--border2);color:var(--ink2);}
-  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
-
-  .hero-meta{display:flex;flex-direction:column;gap:0;text-align:right;align-self:flex-end;padding-bottom:4px;animation:fadeUp .8s ease .52s both;}
-  .hero-meta-item{font-family:var(--mono);font-size:10px;letter-spacing:.07em;color:var(--muted);line-height:2.2;}
-  .hero-meta-item span{color:rgba(240,240,248,.8);}
-
-  /* PHOTO */
-  .hero-photo-wrap{position:relative;animation:fadeUp .9s ease .3s both;}
-  .hero-photo{width:220px;height:220px;border-radius:50%;object-fit:cover;border:2px solid var(--border2);display:block;}
-  /* Placeholder shown when no photo yet */
-  .hero-photo-placeholder{width:220px;height:220px;border-radius:50%;border:2px dashed var(--border2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--surface);}
-  .hero-photo-placeholder span{font-size:48px;}
-  .hero-photo-placeholder p{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 16px;}
-  .hero-photo-ring{position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(240,151,10,.2);animation:rotatering 12s linear infinite;}
-  .hero-photo-ring::before{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:var(--amber);border-radius:50%;}
-  @keyframes rotatering{to{transform:rotate(360deg);}}
-
-  /* Scroll hint */
-  .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp 1s ease .7s both;}
-  .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--muted),transparent);animation:scrollpulse 2s ease-in-out infinite;}
-  @keyframes scrollpulse{0%,100%{opacity:1;}50%{opacity:.25;}}
-
-  /* ── SECTION BASE ── */
-  section{padding:88px 52px;border-bottom:1px solid var(--border);}
-  .section-label{display:flex;align-items:center;gap:14px;margin-bottom:48px;}
-  .section-num{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em;}
-  .section-title-sm{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
-  .section-line{flex:1;height:1px;background:var(--border);}
-  .section-heading{font-family:var(--serif);font-size:clamp(32px,4vw,54px);line-height:1.1;letter-spacing:-.02em;margin-bottom:32px;}
-  .section-heading em{font-style:italic;color:var(--amber);}
-
-  /* ── NOW ── */
-  #now{background:var(--bg);padding:48px 52px;}
-  .now-inner{display:flex;align-items:flex-start;gap:48px;flex-wrap:wrap;}
-  .now-label{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);flex-shrink:0;padding-top:4px;}
-  .now-items{display:flex;flex-direction:column;gap:10px;}
-  .now-item{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--ink2);line-height:1.6;}
-  .now-dot{width:5px;height:5px;background:var(--amber);border-radius:50%;margin-top:8px;flex-shrink:0;}
-
-  /* ── ABOUT ── */
-  #about{background:var(--bg2);}
-  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:start;}
-  .about-text{font-size:15px;color:var(--ink2);line-height:1.9;}
-  .about-text p+p{margin-top:18px;}
-  .about-text strong{color:var(--ink);font-weight:600;}
-  .about-right{display:flex;flex-direction:column;gap:24px;}
-  .stat-block{border-top:1px solid var(--border);padding-top:18px;}
-  .stat-num{font-family:var(--serif);font-size:42px;line-height:1;color:var(--amber);letter-spacing:-.02em;}
-  .stat-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px;}
-  .cert-list{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
-  .cert-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2);}
-  .cert-dot{width:4px;height:4px;background:var(--amber);border-radius:50%;flex-shrink:0;}
-
-  /* ── PROJECTS ── */
-  #projects{background:var(--bg);}
-  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-  .project-card{background:var(--card);padding:28px 24px;position:relative;overflow:hidden;transition:background .18s;}
-  .project-card:hover{background:var(--card2);}
-  .project-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
-  .project-card:hover::after{transform:scaleX(1);}
-  .project-card.featured{grid-column:span 2;background:var(--surface);}
-  .project-card.featured:hover{background:var(--card);}
-  .project-tag{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);background:var(--amber-dim);padding:3px 8px;display:inline-block;margin-bottom:12px;border:1px solid rgba(240,151,10,.2);}
-  .project-name{font-family:var(--serif);font-size:20px;line-height:1.2;letter-spacing:-.01em;margin-bottom:9px;color:var(--ink);}
-  .project-card.featured .project-name{font-size:25px;}
-  .project-desc{font-size:13px;color:var(--ink2);line-height:1.72;margin-bottom:16px;}
-  .project-outcome{border-top:1px solid var(--border);padding-top:12px;font-family:var(--mono);font-size:10px;color:var(--green);line-height:1.5;}
-  .project-outcome::before{content:'→ ';color:var(--amber);}
-  .project-tech{display:flex;gap:4px;flex-wrap:wrap;margin-top:10px;}
-  .tech-tag{font-family:var(--mono);font-size:8px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.04);padding:2px 7px;border:1px solid var(--border);}
-
-  /* ── STACK ── */
-  #stack{background:var(--bg2);}
-  .stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
-  .stack-item{background:var(--card);padding:20px 18px;transition:background .15s;}
-  .stack-item:hover{background:var(--card2);}
-  .stack-icon{font-size:22px;margin-bottom:8px;}
-  .stack-name{font-weight:600;font-size:13px;margin-bottom:3px;color:var(--ink);}
-  .stack-level{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-  .stack-bar{height:2px;background:var(--border);margin-top:8px;border-radius:2px;overflow:hidden;}
-  .stack-bar-fill{height:100%;background:var(--amber);border-radius:2px;}
-
-  /* ── ACHIEVEMENTS ── */
-  #achievements{background:var(--bg);}
-  .achievements-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-  .achievement-item{background:var(--card);padding:24px 20px;display:flex;gap:16px;align-items:flex-start;transition:background .15s;}
-  .achievement-item:hover{background:var(--card2);}
-  .achievement-rank{font-family:var(--serif);font-size:38px;line-height:1;color:var(--amber);letter-spacing:-.02em;flex-shrink:0;min-width:52px;}
-  .achievement-name{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:5px;}
-  .achievement-detail{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.05em;line-height:1.6;}
-
-  /* ── WRITING ── */
-  #writing{background:var(--bg2);}
-  .writing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-  .writing-card{background:var(--card);padding:26px 22px;text-decoration:none;color:inherit;display:block;transition:background .15s;position:relative;}
-  .writing-card:hover{background:var(--card2);}
-  .writing-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
-  .writing-title{font-family:var(--serif);font-size:18px;line-height:1.25;letter-spacing:-.01em;margin-bottom:9px;color:var(--ink);}
-  .writing-excerpt{font-size:12px;color:var(--ink2);line-height:1.65;}
-  .writing-arrow{position:absolute;bottom:22px;right:22px;font-size:15px;color:var(--amber);opacity:0;transition:opacity .18s,transform .18s;}
-  .writing-card:hover .writing-arrow{opacity:1;transform:translate(3px,-3px);}
-
-  /* ── CONTACT ── */
-  #contact{background:var(--bg);}
-  .contact-inner{max-width:700px;margin-bottom:44px;}
-  .contact-heading{font-family:var(--serif);font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;}
-  .contact-heading em{font-style:italic;color:var(--amber);}
-  .contact-sub{font-size:15px;color:var(--ink2);line-height:1.75;font-weight:300;}
-  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-  .contact-tile{display:flex;align-items:center;gap:14px;padding:20px 18px;background:var(--card);text-decoration:none;color:inherit;transition:all .15s;border-left:2px solid transparent;}
-  .contact-tile:hover{background:var(--card2);border-left-color:var(--amber);}
-  .contact-tile.no-link{pointer-events:none;}
-  .ct-icon{font-size:18px;flex-shrink:0;}
-  .ct-label{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
-  .ct-value{font-size:13px;color:var(--ink);font-weight:500;}
-  .ct-arrow{margin-left:auto;font-size:13px;color:var(--amber);opacity:0;transition:opacity .15s;flex-shrink:0;}
-  .contact-tile:hover .ct-arrow{opacity:1;}
-
-  /* ── FOOTER ── */
-  footer{background:var(--bg2);padding:24px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--border);}
-  footer p{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--muted);}
-  footer span{color:var(--amber);}
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
-  .reveal.visible{opacity:1;transform:translateY(0);}
-
-  /* ── RESPONSIVE ── */
-  @media(max-width:1000px){
-    nav{padding:16px 20px;} .nav-links{display:none;}
-    .hero{grid-template-columns:1fr;padding:100px 20px 72px;gap:40px;}
-    .hero-name{font-size:clamp(42px,10vw,72px);white-space:normal;}
-    .hero-meta{text-align:left;} .hero-photo-wrap{order:-1;align-self:flex-start;}
-    section{padding:64px 20px;}
-    .about-grid{grid-template-columns:1fr;gap:40px;}
-    .projects-grid{grid-template-columns:1fr;} .project-card.featured{grid-column:span 1;}
-    .writing-grid,.achievements-list,.contact-grid{grid-template-columns:1fr;}
-    #now{padding:40px 20px;}
-    footer{padding:20px;}
-  }
+:root{--bg:#0e0f1a;--bg2:#13152a;--bg3:#1a1d35;--card:#161929;--ink:#eceef7;--ink2:#9da3c0;--muted:#5a6080;--border:#242840;--amber:#f5a623;--amber-d:rgba(245,166,35,0.13);--green:#39d353;--serif:'DM Serif Display',serif;--mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;}
+::selection{background:var(--amber);color:#000;}
+*{cursor:none;}
+.cursor{width:10px;height:10px;background:var(--amber);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:width .18s,height .18s,opacity .18s;mix-blend-mode:screen;}
+.cursor.expand{width:28px;height:28px;margin-left:-9px;margin-top:-9px;opacity:.45;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 52px;background:rgba(14,15,26,.93);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s;}
+nav.scrolled{border-color:var(--border);}
+.nav-logo{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:26px;align-items:center;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--amber);}
+.nav-cv{border:1px solid var(--amber)!important;color:var(--amber)!important;padding:6px 13px!important;}
+.nav-cv:hover{background:var(--amber)!important;color:#000!important;}
+.nav-contact{background:var(--amber)!important;color:#000!important;padding:7px 14px!important;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 52px 64px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(245,166,35,.05) 0%,transparent 70%);pointer-events:none;}
+.hero-photo-wrap{position:absolute;top:0;right:0;height:100%;width:38%;overflow:hidden;pointer-events:none;}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.22;filter:grayscale(30%);}
+.hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 40%,transparent 70%,var(--bg) 100%);}
+.hero>*:not(.hero-photo-wrap){position:relative;z-index:1;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:32px;animation:fadeUp .8s ease .1s both;}
+.live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:livepulse 2.2s ease-in-out infinite;}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(57,211,83,.5);}60%{box-shadow:0 0 0 8px rgba(57,211,83,0);}}
+.eyebrow-text{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.hero-name{font-family:var(--serif);font-size:clamp(36px,7vw,96px);line-height:1;letter-spacing:-.03em;margin-bottom:36px;white-space:nowrap;animation:fadeUp .8s ease .2s both;}
+.hero-name em{font-style:italic;color:var(--amber);}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;animation:fadeUp .8s ease .35s both;}
+.hero-desc{max-width:500px;font-size:17px;color:var(--ink2);line-height:1.75;font-weight:300;}
+.hero-desc strong{font-weight:600;color:var(--ink);}
+.hero-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end;}
+.hero-meta{text-align:right;}
+.hero-meta-item{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);line-height:2.1;}
+.hero-meta-item span{color:var(--ink);font-weight:500;}
+.hero-cta-row{display:flex;gap:10px;justify-content:flex-end;margin-top:6px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#000;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;text-decoration:none;font-weight:500;transition:all .2s;}
+.btn-primary:hover{background:#e8920a;transform:translateY(-1px);}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--ink2);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;text-decoration:none;transition:all .2s;}
+.btn-outline:hover{border-color:var(--amber);color:var(--amber);}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp 1s ease .65s both;}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--muted),transparent);animation:scrollanim 2s ease-in-out infinite;}
+@keyframes scrollanim{0%,100%{opacity:1;}50%{opacity:.25;}}
+#now{padding:0 52px;}
+.now-bar{border:1px solid var(--border);background:var(--bg2);display:flex;align-items:stretch;overflow:hidden;}
+.now-label{background:var(--amber);color:#000;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:16px 18px;writing-mode:vertical-rl;transform:rotate(180deg);font-weight:500;flex-shrink:0;}
+.now-items{display:flex;flex-wrap:wrap;flex:1;}
+.now-item{padding:18px 24px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px;min-width:190px;flex:1;}
+.now-item:last-child{border-right:none;}
+.now-item-title{font-size:13px;font-weight:600;color:var(--ink);}
+.now-item-sub{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;}
+section{padding:88px 52px;}
+.section-label{display:flex;align-items:center;gap:14px;margin-bottom:44px;}
+.section-num{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em;}
+.section-title-sm{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.section-line{flex:1;height:1px;background:var(--border);}
+.section-heading{font-family:var(--serif);font-size:clamp(32px,4.5vw,56px);line-height:1.1;letter-spacing:-.02em;margin-bottom:28px;}
+.section-heading em{font-style:italic;color:var(--amber);}
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:start;}
+.about-text{font-size:16px;color:var(--ink2);line-height:1.88;}
+.about-text p+p{margin-top:20px;}
+.about-text strong{color:var(--ink);font-weight:600;}
+.about-right{display:flex;flex-direction:column;gap:24px;}
+.about-stat-block{border-top:1px solid var(--border);padding-top:18px;}
+.about-stat-num{font-family:var(--serif);font-size:42px;line-height:1;color:var(--amber);letter-spacing:-.02em;}
+.about-stat-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+.cert-list{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.cert-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2);}
+.cert-dot{width:5px;height:5px;background:var(--amber);border-radius:50%;flex-shrink:0;}
+#projects{background:var(--bg);}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.project-card{background:var(--card);padding:28px 24px;position:relative;overflow:hidden;transition:background .18s;}
+.project-card:hover{background:var(--bg3);}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+.project-card:hover::before{transform:scaleX(1);}
+.project-card.featured{grid-column:span 2;background:var(--bg2);}
+.project-card.featured:hover{background:var(--bg3);}
+.project-card.featured .project-name{font-size:24px;}
+.project-tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);background:var(--amber-d);padding:3px 8px;display:inline-block;margin-bottom:12px;}
+.project-name{font-family:var(--serif);font-size:19px;line-height:1.2;letter-spacing:-.01em;margin-bottom:10px;color:var(--ink);}
+.project-desc{font-size:13px;color:var(--ink2);line-height:1.72;margin-bottom:16px;}
+.project-outcome{border-top:1px solid var(--border);padding-top:12px;font-family:var(--mono);font-size:11px;color:var(--green);line-height:1.5;}
+.project-outcome::before{content:'→ ';color:var(--amber);}
+.project-tech{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px;}
+.tech-tag{font-family:var(--mono);font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg);padding:3px 6px;border:1px solid var(--border);}
+#stack{background:var(--bg2);}
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
+.stack-item{background:var(--card);padding:18px 16px;transition:background .15s;}
+.stack-item:hover{background:var(--bg3);}
+.stack-icon{font-size:20px;margin-bottom:8px;}
+.stack-name{font-weight:600;font-size:13px;margin-bottom:3px;color:var(--ink);}
+.stack-level{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.stack-bar{height:2px;background:var(--border);margin-top:8px;border-radius:2px;overflow:hidden;}
+.stack-bar-fill{height:100%;background:var(--amber);border-radius:2px;}
+#achievements{background:var(--bg);}
+.achievements-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.achievement-item{background:var(--card);padding:24px 22px;display:flex;gap:16px;align-items:flex-start;transition:background .15s;}
+.achievement-item:hover{background:var(--bg3);}
+.achievement-rank{font-family:var(--serif);font-size:38px;line-height:1;color:var(--amber);letter-spacing:-.02em;flex-shrink:0;min-width:50px;}
+.achievement-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:5px;}
+.achievement-detail{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.05em;}
+#writing{background:var(--bg2);}
+.writing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.writing-card{background:var(--card);padding:24px 22px;text-decoration:none;color:inherit;display:block;transition:background .15s;position:relative;}
+.writing-card:hover{background:var(--bg3);}
+.writing-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.writing-title{font-family:var(--serif);font-size:17px;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;color:var(--ink);}
+.writing-excerpt{font-size:13px;color:var(--ink2);line-height:1.65;}
+.writing-arrow{position:absolute;bottom:20px;right:20px;font-size:16px;color:var(--amber);opacity:0;transition:opacity .18s,transform .18s;}
+.writing-card:hover .writing-arrow{opacity:1;transform:translate(3px,-3px);}
+#contact{background:var(--bg3);}
+.contact-inner{max-width:780px;margin-bottom:40px;}
+.contact-heading{font-family:var(--serif);font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;}
+.contact-heading em{font-style:italic;color:var(--amber);}
+.contact-sub{font-size:15px;color:var(--ink2);line-height:1.75;font-weight:300;max-width:500px;}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.contact-tile{display:flex;align-items:center;gap:14px;padding:22px 18px;background:var(--card);text-decoration:none;color:inherit;transition:all .15s;border-left:3px solid transparent;}
+.contact-tile:hover{background:var(--bg2);border-left-color:var(--amber);}
+.contact-tile-icon{font-size:18px;flex-shrink:0;}
+.contact-tile-label{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.contact-tile-value{font-size:13px;color:var(--ink);font-weight:500;}
+.contact-tile-arrow{margin-left:auto;font-size:13px;color:var(--amber);opacity:0;transition:opacity .15s;flex-shrink:0;}
+.contact-tile:hover .contact-tile-arrow{opacity:1;}
+.no-link{pointer-events:none;}
+footer{background:#09091a;color:var(--muted);padding:24px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--border);}
+footer p{font-family:var(--mono);font-size:10px;letter-spacing:.06em;}
+footer span{color:var(--amber);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:960px){
+  nav{padding:16px 20px;} .nav-links{display:none;}
+  section{padding:72px 20px;} .hero{padding:100px 20px 56px;}
+  #now{padding:0 20px;}
+  .hero-name{font-size:clamp(28px,9vw,60px);white-space:normal;}
+  .about-grid{grid-template-columns:1fr;gap:48px;}
+  .projects-grid,.writing-grid,.contact-grid{grid-template-columns:1fr;}
+  .project-card.featured{grid-column:span 1;}
+  .achievements-list{grid-template-columns:1fr;}
+  .hero-bottom{flex-direction:column;align-items:flex-start;}
+  .hero-right{align-items:flex-start;}
+  .hero-meta{text-align:left;}
+  .hero-photo-wrap{display:none;}
+  .hero-cta-row{justify-content:flex-start;}
+}
 </style>
 </head>
 <body>
-
 <div class="cursor" id="cursor"></div>
-
-<!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">Peter Tinashe Mundowa</a>
   <div class="nav-links">
-    <a href="#now">Now</a>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#stack">Stack</a>
     <a href="#achievements">Wins</a>
     <a href="#writing">Writing</a>
-    <a href="#contact" class="nav-cta">Contact</a>
+    <a href="cv.pdf" target="_blank" class="nav-cv">CV</a>
+    <a href="#contact" class="nav-contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-
-  <div class="hero-left">
-    <div class="hero-eyebrow">
-      <div class="live-dot"></div>
-      <span class="eyebrow-text">Open to collaborations &nbsp;·&nbsp; Harare, Zimbabwe 🇿🇼</span>
-    </div>
-
-    <h1 class="hero-name">Peter Tinashe <em>Mundowa.</em></h1>
-
-    <p class="hero-tagline">
-      <strong>Data Scientist &amp; AI Agent Builder</strong> at AI Creative Solutions.
-      I build intelligent systems on enterprise data — AI agents, ML pipelines,
-      and production applications for African businesses.
-    </p>
-
-    <div class="hero-actions">
-      <!-- ⚠️ Upload your CV to the GitHub repo as 'cv.pdf' and this button will work automatically -->
-      <a href="cv.pdf" download class="btn btn-primary">⬇ Download CV</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch →</a>
-      <a href="#projects" class="btn btn-ghost">View work →</a>
-    </div>
-
-    <div class="hero-meta" style="margin-top:40px;text-align:left;">
-      <div class="hero-meta-item">Role &nbsp;<span>Data Scientist · AI Creative Solutions</span></div>
-      <div class="hero-meta-item">Degree &nbsp;<span>BSc Data Science &amp; Informatics, UZ (Aug '26)</span></div>
-      <div class="hero-meta-item">Community &nbsp;<span>Zindi Ambassador · R:Ed Author</span></div>
-      <div class="hero-meta-item">Certifications &nbsp;<span>3× Microsoft Certified</span></div>
-    </div>
-  </div>
-
-  <!-- PHOTO — replace 'photo.jpg' with your actual image filename after uploading to repo -->
   <div class="hero-photo-wrap">
-    <div class="hero-photo-ring"></div>
-    <!-- If you have a photo uploaded as 'photo.jpg', replace the placeholder div below with:
-         <img src="photo.jpg" alt="Peter Tinashe Mundowa" class="hero-photo"> -->
-    <div class="hero-photo-placeholder">
-      <span>🧑🏾‍💻</span>
-      <p>Upload photo.jpg to your repo</p>
+    <img src="photo.jpg" alt="Peter Tinashe Mundowa" onerror="this.parentElement.style.display='none'">
+    <div class="hero-photo-overlay"></div>
+  </div>
+  <div class="hero-eyebrow">
+    <div class="live-dot"></div>
+    <span class="eyebrow-text">Open to collaborations &nbsp;·&nbsp; Harare, Zimbabwe &#127481;&#127484;</span>
+  </div>
+  <h1 class="hero-name">Peter Tinashe <em>Mundowa.</em></h1>
+  <div class="hero-bottom">
+    <p class="hero-desc"><strong>Data Scientist &amp; AI Agent Builder</strong> at AI Creative Solutions. I build intelligent systems on top of enterprise data — AI agents, ML pipelines, and production applications for African businesses that deserve world-class technology.</p>
+    <div class="hero-right">
+      <div class="hero-meta">
+        <div class="hero-meta-item">Role &nbsp;<span>Data Scientist · AI Creative Solutions</span></div>
+        <div class="hero-meta-item">Degree &nbsp;<span>BSc Data Science &amp; Informatics, UZ</span></div>
+        <div class="hero-meta-item">Community &nbsp;<span>Zindi Ambassador · R:Ed Author</span></div>
+        <div class="hero-meta-item">Certifications &nbsp;<span>3&#215; Microsoft Certified</span></div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="cv.pdf" target="_blank" class="btn-primary">&#8659; Download CV</a>
+        <a href="#contact" class="btn-outline">Get in touch</a>
+      </div>
     </div>
   </div>
-
   <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- NOW -->
-<section id="now">
-  <div class="now-inner">
-    <div class="now-label">// Now</div>
+<div id="now">
+  <div class="now-bar">
+    <div class="now-label">Now</div>
     <div class="now-items">
-      <div class="now-item"><div class="now-dot"></div>Building AI agents on enterprise SAP data at AI Creative Solutions, Harare</div>
-      <div class="now-item"><div class="now-dot"></div>Completing BSc Data Science &amp; Informatics at the University of Zimbabwe — graduating August 2026</div>
-      <div class="now-item"><div class="now-dot"></div>Organising data science events and mentoring practitioners across Zimbabwe as Zindi Ambassador</div>
-      <div class="now-item"><div class="now-dot"></div>Writing about AI and leadership for Right for Education (R:Ed)</div>
+      <div class="now-item"><div class="now-item-title">AI Agent Development</div><div class="now-item-sub">Enterprise data intelligence · MindStudio</div></div>
+      <div class="now-item"><div class="now-item-title">Dairy Ops App</div><div class="now-item-sub">React 19 · Express 5 · PostgreSQL</div></div>
+      <div class="now-item"><div class="now-item-title">BSc Dissertation</div><div class="now-item-sub">Finalising · UZ · Aug 2026</div></div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="section-label">
-    <span class="section-num">01</span>
-    <span class="section-title-sm">Who I am</span>
-    <div class="section-line"></div>
-  </div>
+  <div class="section-label"><span class="section-num">01</span><span class="section-title-sm">Who I am</span><div class="section-line"></div></div>
   <h2 class="section-heading reveal">Building Africa's <em>intelligent</em> infrastructure.</h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I'm a data scientist and AI engineer based in Harare, Zimbabwe — working at the intersection of <strong>enterprise data systems, machine learning, and AI agent development.</strong> My work involves reverse-engineering complex ERP databases, building production AI agents, and shipping full-stack data applications for clients with real operational needs.</p>
-      <p>At <strong>AI Creative Solutions</strong>, my scope spans data science, AI agent architecture, and full software systems — we turn raw enterprise data into decisions, from inventory traceability and production intelligence to sales analytics and operational efficiency.</p>
-      <p>Beyond my core role, I serve as <strong>Zindi Ambassador for Zimbabwe</strong> — organising data science events, running competitions, and mentoring practitioners across the country. I write about technology and leadership for <strong>Right for Education (R:Ed)</strong>. I believe the best AI solutions for Africa will be built by people who genuinely understand its terrain.</p>
+      <p>I'm a data scientist and AI engineer based in Harare, Zimbabwe — working at the intersection of <strong>enterprise data systems, machine learning, and AI agent development.</strong> My work involves reverse-engineering complex ERP databases, building production AI agents, and shipping full-stack data applications for real clients with real operational needs.</p>
+      <p>At <strong>AI Creative Solutions</strong>, I work in a small, focused team where my scope spans data science, AI agent architecture, and full software systems. We build things that turn raw enterprise data into decisions — from inventory traceability and production intelligence to sales analytics and operational efficiency.</p>
+      <p>Beyond my core role, I serve as <strong>Zindi Ambassador for Zimbabwe</strong> — organising data science events, running competitions, and mentoring the next generation of African practitioners. I write about technology and leadership for <strong>Right for Education (R:Ed)</strong>, reaching audiences across the continent. I believe the best AI solutions for Africa will be built by people who genuinely understand its terrain.</p>
     </div>
     <div class="about-right reveal">
-      <div class="stat-block">
-        <div class="stat-num">5,400+</div>
-        <div class="stat-label">LinkedIn Connections</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-num">3×</div>
-        <div class="stat-label">Microsoft Certified</div>
+      <div class="about-stat-block"><div class="about-stat-num">5,400+</div><div class="about-stat-label">LinkedIn Connections</div></div>
+      <div class="about-stat-block">
+        <div class="about-stat-num">3&#215;</div><div class="about-stat-label">Microsoft Certified</div>
         <div class="cert-list">
           <div class="cert-item"><div class="cert-dot"></div>Data Scientist Associate</div>
           <div class="cert-item"><div class="cert-dot"></div>Power BI Data Analyst Associate</div>
           <div class="cert-item"><div class="cert-dot"></div>AI Engineer Associate</div>
         </div>
       </div>
-      <div class="stat-block">
-        <div class="stat-num">12+</div>
-        <div class="stat-label">Zindi Competitions Entered</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-num">Aug '26</div>
-        <div class="stat-label">BSc Graduation · University of Zimbabwe</div>
-      </div>
+      <div class="about-stat-block"><div class="about-stat-num">12+</div><div class="about-stat-label">Zindi Competitions Entered</div></div>
+      <div class="about-stat-block"><div class="about-stat-num">Aug '26</div><div class="about-stat-label">BSc Graduation · University of Zimbabwe</div></div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">
-    <span class="section-num">02</span>
-    <span class="section-title-sm">Selected Work</span>
-    <div class="section-line"></div>
-  </div>
+  <div class="section-label"><span class="section-num">02</span><span class="section-title-sm">Selected Work</span><div class="section-line"></div></div>
   <h2 class="section-heading reveal">Built for <em>real problems.</em></h2>
   <div class="projects-grid reveal">
-
     <div class="project-card featured">
       <span class="project-tag">AI Agents · Enterprise ERP</span>
       <div class="project-name">SAP Business One AI Agents</div>
-      <p class="project-desc">Reverse-engineered a large, undocumented SAP B1 SQL Server database with hundreds of tables and zero declared foreign keys — building a complete schema and relationship map through evidence-based data validation. Developed AI agents for production intelligence, sales analytics, and inventory traceability on live enterprise data. Validated inventory transaction join patterns across 225,000+ records at 95.56% accuracy.</p>
+      <p class="project-desc">Reverse-engineered a large, undocumented SAP B1 SQL Server database with hundreds of tables and no declared foreign keys — building a complete schema and relationship map through evidence-based data pattern validation. Developed AI agents in MindStudio for production intelligence, sales analytics, and inventory traceability on live enterprise data. Validated inventory transaction join patterns across over 225,000 records at 95.56% match accuracy.</p>
       <div class="project-outcome">Production AI agents delivering real-time operational intelligence on live ERP data</div>
-      <div class="project-tech">
-        <span class="tech-tag">MindStudio</span><span class="tech-tag">SQL Server</span>
-        <span class="tech-tag">SAP B1</span><span class="tech-tag">Python</span>
-        <span class="tech-tag">AI Agents</span><span class="tech-tag">Schema Discovery</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">MindStudio</span><span class="tech-tag">SQL Server</span><span class="tech-tag">SAP B1</span><span class="tech-tag">Python</span><span class="tech-tag">AI Agents</span><span class="tech-tag">Schema Discovery</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">AI Agents · Sales Intelligence</span>
       <div class="project-name">Sales &amp; Distribution Analytics Agent</div>
-      <p class="project-desc">AI-powered analytics agent enabling natural-language querying of sales data, route performance analysis, customer segmentation, and automated reporting for a distribution business.</p>
+      <p class="project-desc">AI-powered analytics agent enabling natural-language querying of sales data, route performance analysis, customer segmentation, and automated reporting integrated with live client data infrastructure.</p>
       <div class="project-outcome">Conversational AI turning raw sales data into distribution intelligence</div>
-      <div class="project-tech">
-        <span class="tech-tag">MindStudio</span><span class="tech-tag">Python</span>
-        <span class="tech-tag">SQL</span><span class="tech-tag">AI Agents</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">MindStudio</span><span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">AI Agents</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">Computer Vision · Dissertation</span>
       <div class="project-name">Maize Leaf Disease Detection</div>
-      <p class="project-desc">YOLOv8-based detection system identifying multiple crop diseases from field images — designed for real-world deployment in Zimbabwean agricultural contexts. BSc final year dissertation.</p>
+      <p class="project-desc">YOLOv8-based detection system identifying multiple crop diseases from field images — designed for real-world deployment in Zimbabwean agricultural contexts. Final year dissertation project.</p>
       <div class="project-outcome">Presented at IndabaX Zimbabwe 2025</div>
-      <div class="project-tech">
-        <span class="tech-tag">YOLOv8</span><span class="tech-tag">Python</span>
-        <span class="tech-tag">OpenCV</span><span class="tech-tag">TensorFlow</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">YOLOv8</span><span class="tech-tag">Python</span><span class="tech-tag">OpenCV</span><span class="tech-tag">TensorFlow</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">Data Engineering · Automation</span>
       <div class="project-name">RBZ Exchange Rate Pipeline</div>
       <p class="project-desc">Automated Python pipeline fetching Reserve Bank of Zimbabwe exchange rate PDFs, extracting and transforming rate data, loading into SQL Server for live Power BI dashboards.</p>
       <div class="project-outcome">Reduced manual data capture from 4 hours to ~15 minutes</div>
-      <div class="project-tech">
-        <span class="tech-tag">Python</span><span class="tech-tag">Power BI</span>
-        <span class="tech-tag">DAX</span><span class="tech-tag">SQL Server</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">SQL Server</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">Full-Stack · Client App</span>
-      <div class="project-name">Dairy Production Ops Tracker</div>
-      <p class="project-desc">Production operations tracking app for a dairy business client in Zimbabwe. Manages intake records, product hierarchy, cumulative stock, and role-based access permissions.</p>
+      <div class="project-name">Dairy Production Operations Tracker</div>
+      <p class="project-desc">Production operations tracking app for a dairy business client in Zimbabwe — intake records, product hierarchy, cumulative stock tracking, and role-based access control.</p>
       <div class="project-outcome">Live production app, actively maintained and extended</div>
-      <div class="project-tech">
-        <span class="tech-tag">React 19</span><span class="tech-tag">Express 5</span>
-        <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Drizzle ORM</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">React 19</span><span class="tech-tag">Express 5</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Drizzle ORM</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">Computer Vision · Traffic</span>
       <div class="project-name">Road Traffic Monitoring System</div>
-      <p class="project-desc">Real-time vehicle detection and tracking using YOLOv8 and SORT algorithm, with a virtual counting line for accurate per-class vehicle counts and exportable analytics.</p>
+      <p class="project-desc">Real-time vehicle detection and tracking using YOLOv8 and SORT, with a virtual counting line for per-class vehicle counts and exportable analytics data.</p>
       <div class="project-outcome">Multi-class real-time vehicle counting with virtual line crossing</div>
-      <div class="project-tech">
-        <span class="tech-tag">YOLOv8</span><span class="tech-tag">SORT</span>
-        <span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">YOLOv8</span><span class="tech-tag">SORT</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">ML · Financial Inclusion</span>
-      <div class="project-name">East Africa Financial Health Model</div>
+      <div class="project-name">East Africa Financial Health Prediction</div>
       <p class="project-desc">Multi-class classification model predicting financial health outcomes across East African populations. data.org Financial Health Prediction Challenge on Zindi.</p>
       <div class="project-outcome">MAE 0.1199 — financial inclusion prediction for East Africa</div>
-      <div class="project-tech">
-        <span class="tech-tag">Python</span><span class="tech-tag">LightGBM</span>
-        <span class="tech-tag">XGBoost</span><span class="tech-tag">Scikit-Learn</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">LightGBM</span><span class="tech-tag">XGBoost</span><span class="tech-tag">Scikit-Learn</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">Business Intelligence</span>
       <div class="project-name">Employee Insights Dashboard</div>
-      <p class="project-desc">Comprehensive HR analytics dashboard in Power BI with DAX measures, workforce trend analysis, attrition modelling, and executive-level reporting visuals.</p>
+      <p class="project-desc">HR analytics dashboard in Power BI with DAX measures, workforce trend analysis, attrition modelling, and executive-level reporting visuals.</p>
       <div class="project-outcome">Executive-ready HR analytics with predictive attrition indicators</div>
-      <div class="project-tech">
-        <span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span>
-        <span class="tech-tag">Power Query</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Power Query</span></div>
     </div>
-
     <div class="project-card">
       <span class="project-tag">Mobile · Agri-Tech</span>
       <div class="project-name">Poultry Farm Management App</div>
-      <p class="project-desc">Mobile application for field data capture, operational workflows, and farm management — emphasising user-friendly design and business process digitisation.</p>
+      <p class="project-desc">Mobile application for field data capture, operational workflows, and farm management in a poultry business context — user-friendly design and full process digitisation.</p>
       <div class="project-outcome">Digital operations management for poultry production environments</div>
-      <div class="project-tech">
-        <span class="tech-tag">Mobile</span><span class="tech-tag">Python</span>
-        <span class="tech-tag">Data Capture</span><span class="tech-tag">Ops Workflows</span>
-      </div>
+      <div class="project-tech"><span class="tech-tag">Mobile</span><span class="tech-tag">Python</span><span class="tech-tag">Data Capture</span><span class="tech-tag">Ops Workflows</span></div>
     </div>
-
   </div>
 </section>
 
-<!-- STACK -->
 <section id="stack">
-  <div class="section-label">
-    <span class="section-num">03</span>
-    <span class="section-title-sm">Tools &amp; Technologies</span>
-    <div class="section-line"></div>
-  </div>
+  <div class="section-label"><span class="section-num">03</span><span class="section-title-sm">Tools &amp; Technologies</span><div class="section-line"></div></div>
   <h2 class="section-heading reveal">My <em>toolkit.</em></h2>
   <div class="stack-grid reveal">
-    <div class="stack-item"><div class="stack-icon">🐍</div><div class="stack-name">Python</div><div class="stack-level">Expert</div><div class="stack-bar"><div class="stack-bar-fill" style="width:95%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">🗄️</div><div class="stack-name">SQL / SQL Server</div><div class="stack-level">Expert</div><div class="stack-bar"><div class="stack-bar-fill" style="width:92%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">📊</div><div class="stack-name">Power BI &amp; DAX</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:88%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">🤖</div><div class="stack-name">MindStudio</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:85%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">👁️</div><div class="stack-name">YOLOv8 / OpenCV</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:83%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">🧠</div><div class="stack-name">TensorFlow / Keras</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:76%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">⚛️</div><div class="stack-name">React / Vite</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:72%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">🗃️</div><div class="stack-name">SAP Business One</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:86%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">🐘</div><div class="stack-name">PostgreSQL</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:78%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">📦</div><div class="stack-name">LightGBM / XGBoost</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:84%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">🚀</div><div class="stack-name">Node.js / Express</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:70%"></div></div></div>
-    <div class="stack-item"><div class="stack-icon">☁️</div><div class="stack-name">Git / GitHub</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:75%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128013;</div><div class="stack-name">Python</div><div class="stack-level">Expert</div><div class="stack-bar"><div class="stack-bar-fill" style="width:95%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128452;</div><div class="stack-name">SQL / SQL Server</div><div class="stack-level">Expert</div><div class="stack-bar"><div class="stack-bar-fill" style="width:92%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128202;</div><div class="stack-name">Power BI &amp; DAX</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:88%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#129302;</div><div class="stack-name">MindStudio</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:85%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128065;</div><div class="stack-name">YOLOv8 / OpenCV</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:83%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#129504;</div><div class="stack-name">TensorFlow / Keras</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:76%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#9883;</div><div class="stack-name">React / Vite</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:72%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128451;</div><div class="stack-name">SAP Business One</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:86%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128024;</div><div class="stack-name">PostgreSQL</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:78%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128230;</div><div class="stack-name">LightGBM / XGBoost</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:84%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128640;</div><div class="stack-name">Node.js / Express</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:70%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#9925;</div><div class="stack-name">Git / GitHub</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:75%"></div></div></div>
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
-  <div class="section-label">
-    <span class="section-num">04</span>
-    <span class="section-title-sm">Competition &amp; Recognition</span>
-    <div class="section-line"></div>
-  </div>
+  <div class="section-label"><span class="section-num">04</span><span class="section-title-sm">Competition &amp; Recognition</span><div class="section-line"></div></div>
   <h2 class="section-heading reveal">Competing at the <em>frontier.</em></h2>
   <div class="achievements-list reveal">
-    <div class="achievement-item">
-      <div class="achievement-rank">3rd</div>
-      <div><div class="achievement-name">ITU AI/ML Global Challenge — Environmental Footprint</div><div class="achievement-detail">International Telecommunication Union · Global competition</div></div>
-    </div>
-    <div class="achievement-item">
-      <div class="achievement-rank">3rd</div>
-      <div><div class="achievement-name">IndabaX Zimbabwe — Face Spoofing Detection Hackathon</div><div class="achievement-detail">Computer Vision · Anti-Spoofing · Zimbabwe</div></div>
-    </div>
-    <div class="achievement-item">
-      <div class="achievement-rank">8th</div>
-      <div><div class="achievement-name">Maize Disease Detection Challenge</div><div class="achievement-detail">Agricultural AI · Zindi Platform</div></div>
-    </div>
-    <div class="achievement-item">
-      <div class="achievement-rank">✦</div>
-      <div><div class="achievement-name">Speaker — IndabaX Zimbabwe 2025</div><div class="achievement-detail">Presented: Maize Leaf Disease Detection · Demo/Startup Session</div></div>
-    </div>
-    <div class="achievement-item">
-      <div class="achievement-rank">✦</div>
-      <div><div class="achievement-name">Zindi Ambassador — Zimbabwe</div><div class="achievement-detail">Organising events · Mentoring data science practitioners across Zimbabwe</div></div>
-    </div>
-    <div class="achievement-item">
-      <div class="achievement-rank">✦</div>
-      <div><div class="achievement-name">Aspire Leaders Program</div><div class="achievement-detail">Aspire Institute · Competitive global cohort · Jan–Mar 2025</div></div>
-    </div>
-    <div class="achievement-item">
-      <div class="achievement-rank">✦</div>
-      <div><div class="achievement-name">WorldQuant University — Applied AI Lab</div><div class="achievement-detail">Deep Learning · Computer Vision · TensorFlow · Nov 2024–May 2025</div></div>
-    </div>
-    <div class="achievement-item">
-      <div class="achievement-rank">✦</div>
-      <div><div class="achievement-name">Microsoft Certified — 3 Certifications</div><div class="achievement-detail">Data Scientist · Power BI Analyst · AI Engineer Associate</div></div>
-    </div>
+    <div class="achievement-item"><div class="achievement-rank">3rd</div><div><div class="achievement-name">ITU AI/ML Global Challenge — Environmental Footprint</div><div class="achievement-detail">International Telecommunication Union · Global competition</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">3rd</div><div><div class="achievement-name">IndabaX Zimbabwe — Face Spoofing Detection Hackathon</div><div class="achievement-detail">Computer Vision · Anti-Spoofing · Zimbabwe</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">8th</div><div><div class="achievement-name">Maize Disease Detection Challenge</div><div class="achievement-detail">Agricultural AI · Zindi Platform</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">Speaker — IndabaX Zimbabwe 2025</div><div class="achievement-detail">Presented: Maize Leaf Disease Detection System · Demo/Startup Session</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">Zindi Ambassador — Zimbabwe</div><div class="achievement-detail">Organising events · Mentoring data science practitioners across Zimbabwe</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">Aspire Leaders Program</div><div class="achievement-detail">Aspire Institute · Competitive global cohort · Jan–Mar 2025</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">WorldQuant University — Applied AI Lab</div><div class="achievement-detail">Deep Learning · Computer Vision · TensorFlow · Nov 2024–May 2025</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">R:Ed Zimbabwe — Leadership Excellence Certificate</div><div class="achievement-detail">Right for Education Africa · Leadership &amp; team engagement award</div></div></div>
   </div>
 </section>
 
-<!-- WRITING -->
 <section id="writing">
-  <div class="section-label">
-    <span class="section-num">05</span>
-    <span class="section-title-sm">Published Writing</span>
-    <div class="section-line"></div>
-  </div>
+  <div class="section-label"><span class="section-num">05</span><span class="section-title-sm">Published Writing</span><div class="section-line"></div></div>
   <h2 class="section-heading reveal">Thinking out <em>loud.</em></h2>
   <div class="writing-grid reveal">
     <a class="writing-card" href="https://rightforeducation.org/2026/03/05/understanding-what-artificial-intelligence-really-means/" target="_blank" rel="noopener">
-      <div class="writing-date">March 2026 · R:Ed Zimbabwe</div>
+      <div class="writing-date">March 2026 &nbsp;·&nbsp; R:Ed Zimbabwe</div>
       <div class="writing-title">Beyond the Robots: What Artificial Intelligence Really Means</div>
       <p class="writing-excerpt">Cutting through the hype to explain what AI actually is — and why it matters for Africa's development.</p>
-      <div class="writing-arrow">↗</div>
+      <div class="writing-arrow">&#8599;</div>
     </a>
     <a class="writing-card" href="https://rightforeducation.org/2025/12/08/leadership-in-the-age-of-technology-guiding-change-with-wisdom/" target="_blank" rel="noopener">
-      <div class="writing-date">December 2025 · R:Ed Zimbabwe</div>
+      <div class="writing-date">December 2025 &nbsp;·&nbsp; R:Ed Zimbabwe</div>
       <div class="writing-title">Leadership in the Age of Technology: Guiding Change with Wisdom</div>
       <p class="writing-excerpt">On what leadership truly means as technology reshapes how Africa lives, learns, and works.</p>
-      <div class="writing-arrow">↗</div>
+      <div class="writing-arrow">&#8599;</div>
     </a>
     <a class="writing-card" href="https://rightforeducation.org/2024/07/24/potential-youth-entrepreneurship/" target="_blank" rel="noopener">
-      <div class="writing-date">July 2024 · R:Ed Zimbabwe</div>
-      <div class="writing-title">Empowering Africa: Unleashing Youth Entrepreneurship</div>
+      <div class="writing-date">July 2024 &nbsp;·&nbsp; R:Ed Zimbabwe</div>
+      <div class="writing-title">Empowering Africa: Unleashing the Potential of Youth Entrepreneurship</div>
       <p class="writing-excerpt">Africa's youth are its greatest entrepreneurial asset. Here's the case for unlocking that potential at scale.</p>
-      <div class="writing-arrow">↗</div>
+      <div class="writing-arrow">&#8599;</div>
     </a>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <div class="section-label">
-    <span class="section-num">06</span>
-    <span class="section-title-sm">Let's connect</span>
-    <div class="section-line"></div>
-  </div>
+  <div class="section-label"><span class="section-num">06</span><span class="section-title-sm">Let's connect</span><div class="section-line"></div></div>
   <div class="contact-inner reveal">
     <h2 class="contact-heading">Got a problem worth <em>solving?</em></h2>
-    <p class="contact-sub">Open to enterprise AI projects, data infrastructure work, collaborations, and conversations that move the African tech ecosystem forward. Reach out — I respond.</p>
+    <p class="contact-sub">Open to conversations about enterprise AI, data infrastructure, client projects, and collaborations that move the African tech ecosystem forward. Reach out — I respond.</p>
   </div>
   <div class="contact-grid reveal">
     <a class="contact-tile" href="https://www.linkedin.com/in/peter-tinashe-mundowa-758a2b239/" target="_blank" rel="noopener">
-      <div class="ct-icon">💼</div>
-      <div><div class="ct-label">LinkedIn</div><div class="ct-value">Peter Tinashe Mundowa</div></div>
-      <div class="ct-arrow">↗</div>
+      <div class="contact-tile-icon">&#128188;</div>
+      <div><div class="contact-tile-label">LinkedIn</div><div class="contact-tile-value">Peter Tinashe Mundowa</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
     </a>
     <a class="contact-tile" href="https://github.com/PeterTheDataScientist" target="_blank" rel="noopener">
-      <div class="ct-icon">🐙</div>
-      <div><div class="ct-label">GitHub</div><div class="ct-value">PeterTheDataScientist</div></div>
-      <div class="ct-arrow">↗</div>
+      <div class="contact-tile-icon">&#128025;</div>
+      <div><div class="contact-tile-label">GitHub</div><div class="contact-tile-value">PeterTheDataScientist</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
     </a>
     <div class="contact-tile" id="email-tile" onclick="revealEmail(this)" style="cursor:pointer;">
-      <div class="ct-icon">✉️</div>
-      <div><div class="ct-label">Email</div><div class="ct-value" id="email-val">Click to reveal</div></div>
-      <div class="ct-arrow" style="opacity:1;">→</div>
+      <div class="contact-tile-icon">&#9993;</div>
+      <div><div class="contact-tile-label">Email</div><div class="contact-tile-value" id="email-val">Click to reveal</div></div>
+      <div class="contact-tile-arrow" style="opacity:1;">&#8594;</div>
     </div>
     <a class="contact-tile" href="https://zindi.africa/users/PeterTheAnalyst" target="_blank" rel="noopener">
-      <div class="ct-icon">🏆</div>
-      <div><div class="ct-label">Zindi</div><div class="ct-value">Ambassador · Zimbabwe</div></div>
-      <div class="ct-arrow">↗</div>
+      <div class="contact-tile-icon">&#127942;</div>
+      <div><div class="contact-tile-label">Zindi</div><div class="contact-tile-value">Ambassador · Zimbabwe</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
     </a>
     <a class="contact-tile" href="https://rightforeducation.org/author/peter-tinashe-mundowa/" target="_blank" rel="noopener">
-      <div class="ct-icon">✍️</div>
-      <div><div class="ct-label">R:Ed Zimbabwe</div><div class="ct-value">Author · African tech &amp; education</div></div>
-      <div class="ct-arrow">↗</div>
+      <div class="contact-tile-icon">&#9997;</div>
+      <div><div class="contact-tile-label">R:Ed Zimbabwe</div><div class="contact-tile-value">Author · African tech &amp; education</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
     </a>
-    <div class="contact-tile no-link">
-      <div class="ct-icon">📍</div>
-      <div><div class="ct-label">Location</div><div class="ct-value">Harare, Zimbabwe 🇿🇼 · Remote globally</div></div>
-    </div>
+    <a class="contact-tile" href="cv.pdf" target="_blank">
+      <div class="contact-tile-icon">&#128196;</div>
+      <div><div class="contact-tile-label">Curriculum Vitae</div><div class="contact-tile-value">Download PDF</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
+    </a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 <span>Peter Tinashe Mundowa</span> · Harare, Zimbabwe 🇿🇼</p>
+  <p>&#169; 2026 <span>Peter Tinashe Mundowa</span> · Harare, Zimbabwe &#127481;&#127484;</p>
   <p>Data Scientist · AI Agent Builder · <span>AI Creative Solutions</span></p>
 </footer>
 
 <script>
-  // Cursor
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = (e.clientX - 5) + 'px';
-    cursor.style.top  = (e.clientY - 5) + 'px';
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{cursor.style.left=(e.clientX-5)+'px';cursor.style.top=(e.clientY-5)+'px';});
+document.querySelectorAll('a,.project-card,.writing-card,.stack-item,.achievement-item,#email-tile').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('expand'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('expand'));
+});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}
   });
-  document.querySelectorAll('a,.project-card,.writing-card,.stack-item,.achievement-item,#email-tile,.btn').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('big'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
-  });
-
-  // Nav border
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  // Scroll reveal
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 70);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // Protected email
-  function revealEmail(el) {
-    const parts = ['peter','mundowa','25','@','gmail','.','com'];
-    const addr  = parts.join('').replace('@gmail.com','').replace('petermundowa25','petermundowa25') + parts[3] + parts[4] + parts[5] + parts[6];
-    // Correct assembly
-    const a = 'peter' + 'mundowa' + '25' + '\u0040' + 'gmail' + '.' + 'com';
-    document.getElementById('email-val').textContent = a;
-    el.onclick = () => { window.location.href = 'mailto:' + a; };
-  }
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function revealEmail(el){
+  const p=['peter','mundowa','25','@','gmail','.','com'];
+  const addr=p.join('');
+  document.getElementById('email-val').textContent=addr;
+  el.onclick=()=>{window.location.href='mailto:'+addr;};
+}
 </script>
 </body>
 </html>
