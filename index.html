@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Peter Tinashe Mundowa — Data Scientist & AI Agent Builder from Zimbabwe. Building intelligent systems for African enterprises.">
+<meta name="keywords" content="Peter Tinashe Mundowa, Data Scientist Zimbabwe, AI Agent Builder Africa, MindStudio, Zindi Ambassador Zimbabwe, Machine Learning Zimbabwe">
+<meta property="og:title" content="Peter Tinashe Mundowa — Data Scientist & AI Builder">
+<meta property="og:description" content="Building AI agents, data pipelines, and intelligent systems for African enterprises. Zindi Ambassador. Zimbabwe.">
+<title>Peter Tinashe Mundowa — Data Scientist &amp; AI Builder · Zimbabwe</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0f1a;--bg2:#13152a;--bg3:#1a1d35;--card:#161929;--ink:#eceef7;--ink2:#9da3c0;--muted:#5a6080;--border:#242840;--amber:#f5a623;--amber-d:rgba(245,166,35,0.13);--green:#39d353;--serif:'DM Serif Display',serif;--mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;}
+::selection{background:var(--amber);color:#000;}
+*{cursor:none;}
+.cursor{width:10px;height:10px;background:var(--amber);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:width .18s,height .18s,opacity .18s;mix-blend-mode:screen;}
+.cursor.expand{width:28px;height:28px;margin-left:-9px;margin-top:-9px;opacity:.45;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 52px;background:rgba(14,15,26,.93);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s;}
+nav.scrolled{border-color:var(--border);}
+.nav-logo{font-family:var(--serif);font-size:16px;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:22px;align-items:center;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--amber);}
+.nav-cv{border:1px solid var(--amber)!important;color:var(--amber)!important;padding:6px 13px!important;}
+.nav-cv:hover{background:var(--amber)!important;color:#000!important;}
+.nav-contact{background:var(--amber)!important;color:#000!important;padding:7px 14px!important;}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 52px 64px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(245,166,35,.05) 0%,transparent 70%);pointer-events:none;}
+.hero-photo-wrap{position:absolute;top:0;right:0;height:100%;width:38%;overflow:hidden;pointer-events:none;}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.22;filter:grayscale(30%);}
+.hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 40%,transparent 70%,var(--bg) 100%);}
+.hero>*:not(.hero-photo-wrap){position:relative;z-index:1;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:32px;animation:fadeUp .8s ease .1s both;}
+.live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:livepulse 2.2s ease-in-out infinite;}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(57,211,83,.5);}60%{box-shadow:0 0 0 8px rgba(57,211,83,0);}}
+.eyebrow-text{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.hero-name{font-family:var(--serif);font-size:clamp(36px,7vw,96px);line-height:1;letter-spacing:-.03em;margin-bottom:36px;white-space:nowrap;animation:fadeUp .8s ease .2s both;}
+.hero-name em{font-style:italic;color:var(--amber);}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;animation:fadeUp .8s ease .35s both;}
+.hero-desc{max-width:500px;font-size:17px;color:var(--ink2);line-height:1.75;font-weight:300;}
+.hero-desc strong{font-weight:600;color:var(--ink);}
+.hero-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end;}
+.hero-meta{text-align:right;}
+.hero-meta-item{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);line-height:2.1;}
+.hero-meta-item span{color:var(--ink);font-weight:500;}
+.hero-cta-row{display:flex;gap:10px;justify-content:flex-end;margin-top:6px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#000;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;text-decoration:none;font-weight:500;transition:all .2s;}
+.btn-primary:hover{background:#e8920a;transform:translateY(-1px);}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--ink2);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;text-decoration:none;transition:all .2s;}
+.btn-outline:hover{border-color:var(--amber);color:var(--amber);}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp 1s ease .65s both;}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--muted),transparent);animation:scrollanim 2s ease-in-out infinite;}
+@keyframes scrollanim{0%,100%{opacity:1;}50%{opacity:.25;}}
+/* NOW */
+#now{padding:0 52px;}
+.now-bar{border:1px solid var(--border);background:var(--bg2);display:flex;align-items:stretch;overflow:hidden;}
+.now-label{background:var(--amber);color:#000;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:16px 18px;writing-mode:vertical-rl;transform:rotate(180deg);font-weight:500;flex-shrink:0;}
+.now-items{display:flex;flex-wrap:wrap;flex:1;}
+.now-item{padding:18px 24px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px;min-width:180px;flex:1;}
+.now-item:last-child{border-right:none;}
+.now-item-title{font-size:13px;font-weight:600;color:var(--ink);}
+.now-item-sub{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;}
+/* SECTIONS */
+section{padding:88px 52px;}
+.section-label{display:flex;align-items:center;gap:14px;margin-bottom:44px;}
+.section-num{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em;}
+.section-title-sm{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.section-line{flex:1;height:1px;background:var(--border);}
+.section-heading{font-family:var(--serif);font-size:clamp(32px,4.5vw,56px);line-height:1.1;letter-spacing:-.02em;margin-bottom:28px;}
+.section-heading em{font-style:italic;color:var(--amber);}
+/* ABOUT */
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:start;}
+.about-text{font-size:16px;color:var(--ink2);line-height:1.88;}
+.about-text p+p{margin-top:20px;}
+.about-text strong{color:var(--ink);font-weight:600;}
+.about-right{display:flex;flex-direction:column;gap:24px;}
+.about-stat-block{border-top:1px solid var(--border);padding-top:18px;}
+.about-stat-num{font-family:var(--serif);font-size:42px;line-height:1;color:var(--amber);letter-spacing:-.02em;}
+.about-stat-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+.cert-list{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.cert-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2);}
+.cert-dot{width:5px;height:5px;background:var(--amber);border-radius:50%;flex-shrink:0;}
+/* PROJECTS */
+#projects{background:var(--bg);}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.project-card{background:var(--card);padding:28px 24px;position:relative;overflow:hidden;transition:background .18s;}
+.project-card:hover{background:var(--bg3);}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+.project-card:hover::before{transform:scaleX(1);}
+.project-card.featured{grid-column:span 2;background:var(--bg2);}
+.project-card.featured:hover{background:var(--bg3);}
+.project-card.featured .project-name{font-size:24px;}
+.project-tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);background:var(--amber-d);padding:3px 8px;display:inline-block;margin-bottom:12px;}
+.project-name{font-family:var(--serif);font-size:19px;line-height:1.2;letter-spacing:-.01em;margin-bottom:10px;color:var(--ink);}
+.project-desc{font-size:13px;color:var(--ink2);line-height:1.72;margin-bottom:16px;}
+.project-outcome{border-top:1px solid var(--border);padding-top:12px;font-family:var(--mono);font-size:11px;color:var(--green);line-height:1.5;}
+.project-outcome::before{content:'&#8594; ';color:var(--amber);}
+.project-tech{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px;}
+.tech-tag{font-family:var(--mono);font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg);padding:3px 6px;border:1px solid var(--border);}
+/* STACK */
+#stack{background:var(--bg2);}
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
+.stack-item{background:var(--card);padding:18px 16px;transition:background .15s;}
+.stack-item:hover{background:var(--bg3);}
+.stack-icon{font-size:20px;margin-bottom:8px;}
+.stack-name{font-weight:600;font-size:13px;margin-bottom:3px;color:var(--ink);}
+.stack-level{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.stack-bar{height:2px;background:var(--border);margin-top:8px;border-radius:2px;overflow:hidden;}
+.stack-bar-fill{height:100%;background:var(--amber);border-radius:2px;}
+/* ACHIEVEMENTS */
+#achievements{background:var(--bg);}
+.achievements-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.achievement-item{background:var(--card);padding:24px 22px;display:flex;gap:16px;align-items:flex-start;transition:background .15s;}
+.achievement-item:hover{background:var(--bg3);}
+.achievement-rank{font-family:var(--serif);font-size:38px;line-height:1;color:var(--amber);letter-spacing:-.02em;flex-shrink:0;min-width:50px;}
+.achievement-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:5px;}
+.achievement-detail{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.05em;line-height:1.6;}
+/* COMMUNITY */
+#community{background:var(--bg2);}
+.community-card{border:1px solid var(--border);background:var(--card);padding:40px 44px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.community-left{}
+.community-tag{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);background:var(--amber-d);padding:3px 8px;display:inline-block;margin-bottom:16px;}
+.community-title{font-family:var(--serif);font-size:28px;line-height:1.2;letter-spacing:-.01em;margin-bottom:14px;color:var(--ink);}
+.community-desc{font-size:14px;color:var(--ink2);line-height:1.8;}
+.community-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.community-stat{background:var(--bg2);padding:22px 18px;}
+.community-stat-num{font-family:var(--serif);font-size:36px;line-height:1;color:var(--amber);letter-spacing:-.02em;}
+.community-stat-label{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;line-height:1.5;}
+/* CERTIFICATIONS */
+#certifications{background:var(--bg);}
+.certs-tier{margin-bottom:36px;}
+.certs-tier:last-child{margin-bottom:0;}
+.certs-tier-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.certs-tier-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
+.cert-card{background:var(--card);padding:18px 20px;transition:background .15s;}
+.cert-card:hover{background:var(--bg3);}
+.cert-card-issuer{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.cert-card-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:4px;}
+.cert-card-date{font-family:var(--mono);font-size:9px;color:var(--muted);}
+/* AWARDS */
+#awards{background:var(--bg2);}
+.awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.award-card{background:var(--card);padding:28px 24px;display:flex;gap:18px;align-items:flex-start;transition:background .15s;}
+.award-card:hover{background:var(--bg3);}
+.award-icon{font-size:28px;flex-shrink:0;}
+.award-name{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.3;}
+.award-issuer{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:.06em;margin-bottom:6px;}
+.award-desc{font-size:12px;color:var(--ink2);line-height:1.65;}
+/* WRITING */
+#writing{background:var(--bg);}
+.writing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.writing-card{background:var(--card);padding:24px 22px;text-decoration:none;color:inherit;display:block;transition:background .15s;position:relative;}
+.writing-card:hover{background:var(--bg3);}
+.writing-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.writing-title{font-family:var(--serif);font-size:17px;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;color:var(--ink);}
+.writing-excerpt{font-size:12px;color:var(--ink2);line-height:1.65;}
+.writing-arrow{position:absolute;bottom:20px;right:20px;font-size:16px;color:var(--amber);opacity:0;transition:opacity .18s,transform .18s;}
+.writing-card:hover .writing-arrow{opacity:1;transform:translate(3px,-3px);}
+/* CONTACT */
+#contact{background:var(--bg3);}
+.contact-inner{max-width:780px;margin-bottom:40px;}
+.contact-heading{font-family:var(--serif);font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;}
+.contact-heading em{font-style:italic;color:var(--amber);}
+.contact-sub{font-size:15px;color:var(--ink2);line-height:1.75;font-weight:300;max-width:500px;}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.contact-tile{display:flex;align-items:center;gap:14px;padding:22px 18px;background:var(--card);text-decoration:none;color:inherit;transition:all .15s;border-left:3px solid transparent;}
+.contact-tile:hover{background:var(--bg2);border-left-color:var(--amber);}
+.contact-tile-icon{font-size:18px;flex-shrink:0;}
+.contact-tile-label{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.contact-tile-value{font-size:13px;color:var(--ink);font-weight:500;}
+.contact-tile-arrow{margin-left:auto;font-size:13px;color:var(--amber);opacity:0;transition:opacity .15s;flex-shrink:0;}
+.contact-tile:hover .contact-tile-arrow{opacity:1;}
+.no-link{pointer-events:none;}
+footer{background:#09091a;color:var(--muted);padding:24px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--border);}
+footer p{font-family:var(--mono);font-size:10px;letter-spacing:.06em;}
+footer span{color:var(--amber);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:960px){
+  nav{padding:16px 20px;}.nav-links{display:none;}
+  section{padding:64px 20px;}.hero{padding:100px 20px 56px;}
+  #now{padding:0 20px;}
+  .hero-name{font-size:clamp(28px,9vw,60px);white-space:normal;}
+  .about-grid{grid-template-columns:1fr;gap:40px;}
+  .projects-grid,.writing-grid,.contact-grid,.certs-grid{grid-template-columns:1fr;}
+  .project-card.featured{grid-column:span 1;}
+  .achievements-list,.awards-grid,.community-stats{grid-template-columns:1fr;}
+  .community-card{grid-template-columns:1fr;padding:28px 20px;}
+  .hero-bottom{flex-direction:column;align-items:flex-start;}
+  .hero-right{align-items:flex-start;}
+  .hero-meta{text-align:left;}
+  .hero-photo-wrap{display:none;}
+  .hero-cta-row{justify-content:flex-start;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Peter Tinashe Mundowa</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Wins</a>
+    <a href="#certifications">Certs</a>
+    <a href="#writing">Writing</a>
+    <a href="cv.pdf" target="_blank" class="nav-cv">CV</a>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo-wrap">
+    <img src="photo.jpg" alt="Peter Tinashe Mundowa" onerror="this.parentElement.style.display='none'">
+    <div class="hero-photo-overlay"></div>
+  </div>
+  <div class="hero-eyebrow">
+    <div class="live-dot"></div>
+    <span class="eyebrow-text">Open to collaborations &nbsp;·&nbsp; Harare, Zimbabwe &#127481;&#127484;</span>
+  </div>
+  <h1 class="hero-name">Peter Tinashe <em>Mundowa.</em></h1>
+  <div class="hero-bottom">
+    <p class="hero-desc"><strong>Data Scientist &amp; AI Agent Builder</strong> at AI Creative Solutions. I build intelligent systems on enterprise data — AI agents, ML pipelines, and production applications for African businesses that deserve world-class technology.</p>
+    <div class="hero-right">
+      <div class="hero-meta">
+        <div class="hero-meta-item">Role &nbsp;<span>Data Scientist · AI Creative Solutions</span></div>
+        <div class="hero-meta-item">Degree &nbsp;<span>BSc Data Science &amp; Informatics, UZ</span></div>
+        <div class="hero-meta-item">Community &nbsp;<span>Zindi Ambassador · R:Ed Author</span></div>
+        <div class="hero-meta-item">Certifications &nbsp;<span>7&#215; Certified · 3&#215; Microsoft</span></div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="cv.pdf" target="_blank" class="btn-primary">&#8659; Download CV</a>
+        <a href="#contact" class="btn-outline">Get in touch</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- NOW -->
+<div id="now">
+  <div class="now-bar">
+    <div class="now-label">Now</div>
+    <div class="now-items">
+      <div class="now-item"><div class="now-item-title">AI Agent Systems</div><div class="now-item-sub">Enterprise data intelligence · MindStudio</div></div>
+      <div class="now-item"><div class="now-item-title">Production App Dev</div><div class="now-item-sub">Full-stack operations platform · React &amp; PostgreSQL</div></div>
+      <div class="now-item"><div class="now-item-title">BSc Dissertation</div><div class="now-item-sub">Finalising · UZ · Aug 2026</div></div>
+      <div class="now-item"><div class="now-item-title">Zindi Community</div><div class="now-item-sub">Events · Competitions · Mentorship</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label"><span class="section-num">01</span><span class="section-title-sm">Who I am</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">Building Africa's <em>intelligent</em> infrastructure.</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a data scientist and AI engineer based in Harare, Zimbabwe — working at the intersection of <strong>enterprise data systems, machine learning, and AI agent development.</strong> My work involves designing intelligent systems on complex operational data, building production AI agents, and shipping full-stack applications for clients with real business needs.</p>
+      <p>At <strong>AI Creative Solutions</strong>, my scope spans data science, AI agent architecture, and full software engineering — turning raw enterprise data into decisions, from operational intelligence and production tracking to sales analytics and automated reporting.</p>
+      <p>Beyond my core role, I serve as <strong>Zindi Ambassador for Zimbabwe</strong> — organising data science events, running competitions, and mentoring practitioners across the country. I write about technology and leadership for <strong>Right for Education (R:Ed)</strong>, reaching audiences across Africa. I believe the best AI solutions for Africa will be built by people who truly understand its terrain.</p>
+    </div>
+    <div class="about-right reveal">
+      <div class="about-stat-block">
+        <div class="about-stat-num">6,400+</div>
+        <div class="about-stat-label">LinkedIn Connections</div>
+      </div>
+      <div class="about-stat-block">
+        <div class="about-stat-num">3&#215;</div>
+        <div class="about-stat-label">Microsoft Certified</div>
+        <div class="cert-list">
+          <div class="cert-item"><div class="cert-dot"></div>Azure AI Engineer Associate</div>
+          <div class="cert-item"><div class="cert-dot"></div>Azure Data Scientist Associate</div>
+          <div class="cert-item"><div class="cert-dot"></div>Power BI Data Analyst Associate</div>
+        </div>
+      </div>
+      <div class="about-stat-block">
+        <div class="about-stat-num">12+</div>
+        <div class="about-stat-label">Zindi Competitions Entered</div>
+      </div>
+      <div class="about-stat-block">
+        <div class="about-stat-num">Aug '26</div>
+        <div class="about-stat-label">BSc Graduation · University of Zimbabwe</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label"><span class="section-num">02</span><span class="section-title-sm">Selected Work</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">Built for <em>real problems.</em></h2>
+  <div class="projects-grid reveal">
+
+    <!-- FEATURED -->
+    <div class="project-card featured">
+      <span class="project-tag">AI Agents · Enterprise Intelligence</span>
+      <div class="project-name">Enterprise AI Agent System</div>
+      <p class="project-desc">Designed and deployed a suite of production AI agents on a large, completely undocumented enterprise database — building a full data relationship map through systematic pattern validation, achieving 95.56% accuracy across 225,000+ live transactions. Agents deliver real-time production intelligence, inventory traceability, and operational analytics, actively used by the business every day.</p>
+      <div class="project-outcome">Production AI agents on live enterprise data — operational intelligence delivered daily</div>
+      <div class="project-tech"><span class="tech-tag">MindStudio</span><span class="tech-tag">SQL Server</span><span class="tech-tag">Python</span><span class="tech-tag">AI Agents</span><span class="tech-tag">LLM Orchestration</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">AI Agents · Sales Automation</span>
+      <div class="project-name">Sales &amp; Distribution Intelligence Agent</div>
+      <p class="project-desc">Built an AI-powered analytics agent that automates sales performance reporting, customer segmentation, and route analysis — integrated with live operational data infrastructure. Reduced manual reporting cycles and insight turnaround from days to under 5 minutes.</p>
+      <div class="project-outcome">Automated reporting &amp; segmentation — insights delivered in under 5 minutes</div>
+      <div class="project-tech"><span class="tech-tag">MindStudio</span><span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">AI Agents</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Computer Vision · IndabaX 2025</span>
+      <div class="project-name">Maize Leaf Disease Detection</div>
+      <p class="project-desc">CNN-based image classification system (EfficientNetB0 transfer learning) identifying maize crop diseases from field images. Built for the Zindi Maize Disease Detection Challenge and selected for presentation at IndabaX Zimbabwe 2025.</p>
+      <div class="project-outcome">Presented at IndabaX Zimbabwe 2025 · 8th place Zindi</div>
+      <div class="project-tech"><span class="tech-tag">TensorFlow</span><span class="tech-tag">EfficientNet</span><span class="tech-tag">Keras</span><span class="tech-tag">Python</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Data Engineering · Automation</span>
+      <div class="project-name">RBZ Exchange Rate Pipeline</div>
+      <p class="project-desc">Automated Python pipeline that fetches Reserve Bank of Zimbabwe exchange rate PDFs, extracts and transforms the rate data, and loads it into SQL Server for live Power BI dashboards and executive reporting.</p>
+      <div class="project-outcome">Manual data capture reduced from 4 hours to ~15 minutes</div>
+      <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">SQL Server</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Full-Stack · Production App</span>
+      <div class="project-name">Production Operations Platform</div>
+      <p class="project-desc">Built a complete operational management application from scratch — covering intake workflows, product hierarchy management, real-time stock tracking, and role-based access control. Live in production for an operational business client.</p>
+      <div class="project-outcome">Live production system, actively used and extended by the client</div>
+      <div class="project-tech"><span class="tech-tag">React 19</span><span class="tech-tag">Express 5</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Drizzle ORM</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Computer Vision · Traffic</span>
+      <div class="project-name">Road Traffic Monitoring System</div>
+      <p class="project-desc">Real-time vehicle detection and multi-class tracking using YOLOv8 and the SORT algorithm, with a virtual counting line for accurate per-class vehicle counts and exportable analytics data.</p>
+      <div class="project-outcome">Multi-class real-time vehicle counting with virtual line crossing</div>
+      <div class="project-tech"><span class="tech-tag">YOLOv8</span><span class="tech-tag">SORT</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Computer Vision · BSc Dissertation</span>
+      <div class="project-name">Tomato Leaf Disease Detector</div>
+      <p class="project-desc">CNN-based image classification system for detecting tomato leaf diseases built as a BSc final year dissertation. Trained with transfer learning on the PlantVillage dataset and deployed as a live Streamlit web application.</p>
+      <div class="project-outcome">BSc Dissertation · deployed as live Streamlit application</div>
+      <div class="project-tech"><span class="tech-tag">TensorFlow</span><span class="tech-tag">Keras</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Python</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">ML · Financial Inclusion · Zindi</span>
+      <div class="project-name">East Africa Financial Health Prediction</div>
+      <p class="project-desc">Multi-class ML model predicting financial health outcomes across East African populations. Built for the data.org Financial Health Prediction Challenge on Zindi with systematic feature engineering on class-imbalanced data.</p>
+      <div class="project-outcome">MAE 0.1199 — financial inclusion prediction for East Africa</div>
+      <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">LightGBM</span><span class="tech-tag">XGBoost</span><span class="tech-tag">Scikit-Learn</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Business Intelligence · Analytics</span>
+      <div class="project-name">Enterprise Analytics Dashboard</div>
+      <p class="project-desc">Enterprise-grade Power BI dashboard delivering live workforce intelligence across departments — headcount trends, attrition modelling, performance distribution, payroll analytics, and executive KPI reporting. Built on a star schema with advanced DAX measures.</p>
+      <div class="project-outcome">Live cross-department analytics with executive-ready KPI reporting</div>
+      <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Power Query</span><span class="tech-tag">Star Schema</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="section-label"><span class="section-num">03</span><span class="section-title-sm">Tools &amp; Technologies</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">My <em>toolkit.</em></h2>
+  <div class="stack-grid reveal">
+    <div class="stack-item"><div class="stack-icon">&#128013;</div><div class="stack-name">Python</div><div class="stack-level">Expert</div><div class="stack-bar"><div class="stack-bar-fill" style="width:95%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128452;</div><div class="stack-name">SQL / SQL Server</div><div class="stack-level">Expert</div><div class="stack-bar"><div class="stack-bar-fill" style="width:92%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128202;</div><div class="stack-name">Power BI &amp; DAX</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:88%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#129302;</div><div class="stack-name">MindStudio</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:85%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128065;</div><div class="stack-name">YOLOv8 / OpenCV</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:83%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#129504;</div><div class="stack-name">TensorFlow / Keras</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:76%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#9883;</div><div class="stack-name">React / Vite</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:72%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128451;</div><div class="stack-name">Enterprise ERP Systems</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:86%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128024;</div><div class="stack-name">PostgreSQL</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:78%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128230;</div><div class="stack-name">LightGBM / XGBoost</div><div class="stack-level">Advanced</div><div class="stack-bar"><div class="stack-bar-fill" style="width:84%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#128640;</div><div class="stack-name">Node.js / Express</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:70%"></div></div></div>
+    <div class="stack-item"><div class="stack-icon">&#9925;</div><div class="stack-name">Git / GitHub</div><div class="stack-level">Proficient</div><div class="stack-bar"><div class="stack-bar-fill" style="width:75%"></div></div></div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-label"><span class="section-num">04</span><span class="section-title-sm">Competition &amp; Recognition</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">Competing at the <em>frontier.</em></h2>
+  <div class="achievements-list reveal">
+    <div class="achievement-item"><div class="achievement-rank">3rd</div><div><div class="achievement-name">ITU AI/ML Global Challenge — Environmental Footprint</div><div class="achievement-detail">International Telecommunication Union · Global competition</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">3rd</div><div><div class="achievement-name">IndabaX Zimbabwe — Face Spoofing Detection Hackathon</div><div class="achievement-detail">Computer Vision · Anti-Spoofing · Zimbabwe</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">8th</div><div><div class="achievement-name">Maize Disease Detection Challenge</div><div class="achievement-detail">Agricultural AI · Zindi Platform</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">Speaker — IndabaX Zimbabwe 2025</div><div class="achievement-detail">Presented: Maize Leaf Disease Detection · Demo/Startup Session · Harare</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">Zindi Ambassador — Zimbabwe</div><div class="achievement-detail">Organising events · Running competitions · Mentoring practitioners</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">McKinsey Forward Program</div><div class="achievement-detail">McKinsey &amp; Company · Problem-solving &amp; leadership framework · Dec 2024</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">Aspire Leaders Program</div><div class="achievement-detail">Aspire Institute · Competitive global cohort · Jan–Mar 2025</div></div></div>
+    <div class="achievement-item"><div class="achievement-rank">&#10022;</div><div><div class="achievement-name">WorldQuant University — Applied AI Lab</div><div class="achievement-detail">Deep Learning · Computer Vision · TensorFlow · Nov 2024–May 2025</div></div></div>
+  </div>
+</section>
+
+<!-- COMMUNITY IMPACT -->
+<section id="community">
+  <div class="section-label"><span class="section-num">05</span><span class="section-title-sm">Community Impact</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">Growing Africa's <em>data ecosystem.</em></h2>
+  <div class="community-card reveal">
+    <div class="community-left">
+      <span class="community-tag">Zindi Ambassador · Zimbabwe · 2025</span>
+      <div class="community-title">"Building a Successful Career in Data &amp; AI"</div>
+      <p class="community-desc">Organised and hosted a live career development event for Zimbabwe's data science community as Zindi Ambassador. The session drew 100+ attendees and ran for 90 minutes — extended from the original schedule due to an exceptionally engaged Q&amp;A. Every question was addressed. Speakers included industry practitioners who broke down real-world AI readiness and career pathways. Attendees connected, formed collaborations, and continued conversations beyond the session. A deliberate investment in making African AI careers more accessible and visible.</p>
+    </div>
+    <div class="community-stats">
+      <div class="community-stat"><div class="community-stat-num">100+</div><div class="community-stat-label">Attendees</div></div>
+      <div class="community-stat"><div class="community-stat-num">90</div><div class="community-stat-label">Minutes · Extended by Q&amp;A</div></div>
+      <div class="community-stat"><div class="community-stat-num">&#127758;</div><div class="community-stat-label">Zimbabwe Data &amp; AI Community</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label"><span class="section-num">06</span><span class="section-title-sm">Certifications &amp; Credentials</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">Credentials that <em>count.</em></h2>
+
+  <div class="reveal">
+    <!-- TIER 1 -->
+    <div class="certs-tier">
+      <div class="certs-tier-label">Professional Certifications</div>
+      <div class="certs-grid">
+        <div class="cert-card"><div class="cert-card-issuer">Microsoft Azure</div><div class="cert-card-name">AI Engineer Associate</div><div class="cert-card-date">2025</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">Microsoft Azure</div><div class="cert-card-name">Data Scientist Associate</div><div class="cert-card-date">2025</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">Microsoft Power BI</div><div class="cert-card-name">Data Analyst Associate</div><div class="cert-card-date">2025</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">DataCamp</div><div class="cert-card-name">Data Engineer Associate</div><div class="cert-card-date">Oct 2024 · Expires Oct 2026 · ID: DEA0018707332646</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">DataCamp</div><div class="cert-card-name">Data Analyst Associate</div><div class="cert-card-date">Oct 2024 · Expires Oct 2026 · ID: DAA0016857435069</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">DataCamp</div><div class="cert-card-name">SQL Associate</div><div class="cert-card-date">Oct 2024 · Expires Oct 2026 · ID: SQA0016556196174</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">DataCamp</div><div class="cert-card-name">Data Scientist Associate</div><div class="cert-card-date">Apr 2024 · Expires Apr 2026 · ID: DSA0016847444310</div></div>
+      </div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="certs-tier">
+      <div class="certs-tier-label">Leadership &amp; Business Programs</div>
+      <div class="certs-grid">
+        <div class="cert-card"><div class="cert-card-issuer">McKinsey &amp; Company</div><div class="cert-card-name">McKinsey Forward Program</div><div class="cert-card-date">December 2024</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">Aspire Institute</div><div class="cert-card-name">Aspire Leaders Program</div><div class="cert-card-date">Jan–Mar 2025 · Competitive global cohort</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">WorldQuant University</div><div class="cert-card-name">Applied Artificial Intelligence Lab</div><div class="cert-card-date">Nov 2024–May 2025</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">WorldQuant University</div><div class="cert-card-name">Applied Data Science Lab</div><div class="cert-card-date">Nov 2023–Apr 2024</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">Young African Leaders Initiative (YALI)</div><div class="cert-card-name">Fundamentals of Responsible Leadership</div><div class="cert-card-date">August 2024</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">University of St. Gallen MBA · R:Ed Africa</div><div class="cert-card-name">Entrepreneurship: Dealing with Uncertainty</div><div class="cert-card-date">April 2024</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">Right for Education · Oxford University, UK</div><div class="cert-card-name">Virtual Writing for African Authors</div><div class="cert-card-date">June 2024</div></div>
+      </div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="certs-tier">
+      <div class="certs-tier-label">Industry Job Simulations</div>
+      <div class="certs-grid">
+        <div class="cert-card"><div class="cert-card-issuer">BCG · Forage</div><div class="cert-card-name">Data Science Job Simulation</div><div class="cert-card-date">Feb 2024 · ID: KieiDzAGnAKjcu5Y2</div></div>
+        <div class="cert-card"><div class="cert-card-issuer">British Airways · Forage</div><div class="cert-card-name">Data Science Job Simulation</div><div class="cert-card-date">Jan 2024 · Web scraping · ML · Model evaluation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-label"><span class="section-num">07</span><span class="section-title-sm">Awards &amp; Recognition</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">Recognised for <em>impact.</em></h2>
+  <div class="awards-grid reveal">
+    <div class="award-card">
+      <div class="award-icon">&#127942;</div>
+      <div>
+        <div class="award-name">Leadership Beacon Award</div>
+        <div class="award-issuer">Right for Education Africa · Cert No: RED-2025-LBA-010</div>
+        <div class="award-desc">Awarded for exceptional leadership, unwavering commitment, outstanding service, and tireless dedication — recognising remarkable impact and an exemplary role in advancing the mission of Right for Education.</div>
+      </div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">&#127941;</div>
+      <div>
+        <div class="award-name">Certificate of Excellence in Leadership Support</div>
+        <div class="award-issuer">Right for Education Africa · R:Ed Zimbabwe Chapter</div>
+        <div class="award-desc">Awarded in acknowledgment of outstanding support, dedication to chapter engagement, and unwavering commitment to fostering collaboration in editing and publishing — strengthening the foundation of the R:Ed Zimbabwe Chapter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="section-label"><span class="section-num">08</span><span class="section-title-sm">Published Writing</span><div class="section-line"></div></div>
+  <h2 class="section-heading reveal">Thinking out <em>loud.</em></h2>
+  <div class="writing-grid reveal">
+    <a class="writing-card" href="https://rightforeducation.org/2026/03/05/understanding-what-artificial-intelligence-really-means/" target="_blank" rel="noopener">
+      <div class="writing-date">March 2026 · R:Ed Zimbabwe</div>
+      <div class="writing-title">Beyond the Robots: What Artificial Intelligence Really Means</div>
+      <p class="writing-excerpt">Cutting through the hype to explain what AI actually is — and why it matters profoundly for Africa's development.</p>
+      <div class="writing-arrow">&#8599;</div>
+    </a>
+    <a class="writing-card" href="https://rightforeducation.org/2026/02/16/africa-the-continent-of-untapped-wealth/" target="_blank" rel="noopener">
+      <div class="writing-date">February 2026 · R:Ed Zimbabwe</div>
+      <div class="writing-title">Africa: The Continent of Untapped Wealth Below and Unseen Potential Above</div>
+      <p class="writing-excerpt">Africa is immensely rich in natural resources yet burdened by poverty — a paradox that demands new thinking.</p>
+      <div class="writing-arrow">&#8599;</div>
+    </a>
+    <a class="writing-card" href="https://rightforeducation.org/2026/01/28/why-learning-data-skills-is-the-new-literacy/" target="_blank" rel="noopener">
+      <div class="writing-date">January 2026 · R:Ed Zimbabwe</div>
+      <div class="writing-title">Why Learning Data Skills Is the New Literacy</div>
+      <p class="writing-excerpt">In the past, literacy meant reading and writing. Today, a new kind of literacy is emerging — and Africa must not be left behind.</p>
+      <div class="writing-arrow">&#8599;</div>
+    </a>
+    <a class="writing-card" href="https://rightforeducation.org/2026/01/12/zimbabwe-from-africas-breadbasket-to-revival-and-growth/" target="_blank" rel="noopener">
+      <div class="writing-date">January 2026 · R:Ed Zimbabwe</div>
+      <div class="writing-title">Zimbabwe: From Africa's Breadbasket to Revival and Growth</div>
+      <p class="writing-excerpt">Once the breadbasket of Africa — the path from agricultural collapse to recovery and what it means for Zimbabwe's future.</p>
+      <div class="writing-arrow">&#8599;</div>
+    </a>
+    <a class="writing-card" href="https://rightforeducation.org/2025/12/08/leadership-in-the-age-of-technology-guiding-change-with-wisdom/" target="_blank" rel="noopener">
+      <div class="writing-date">December 2025 · R:Ed Zimbabwe</div>
+      <div class="writing-title">Leadership in the Age of Technology: Guiding Change with Wisdom</div>
+      <p class="writing-excerpt">Technology reshapes how Africa lives, learns, and works — but it takes leaders with wisdom and empathy to guide the change.</p>
+      <div class="writing-arrow">&#8599;</div>
+    </a>
+    <a class="writing-card" href="https://rightforeducation.org/2024/07/24/potential-youth-entrepreneurship/" target="_blank" rel="noopener">
+      <div class="writing-date">July 2024 · R:Ed Zimbabwe</div>
+      <div class="writing-title">Empowering Africa: Unleashing the Potential of Youth Entrepreneurship</div>
+      <p class="writing-excerpt">Africa's youth are its greatest entrepreneurial asset. Here's the case for unlocking that potential at scale.</p>
+      <div class="writing-arrow">&#8599;</div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label"><span class="section-num">09</span><span class="section-title-sm">Let's connect</span><div class="section-line"></div></div>
+  <div class="contact-inner reveal">
+    <h2 class="contact-heading">Got a problem worth <em>solving?</em></h2>
+    <p class="contact-sub">Open to conversations about enterprise AI, data infrastructure, client projects, and collaborations that move the African tech ecosystem forward. Reach out — I respond.</p>
+  </div>
+  <div class="contact-grid reveal">
+    <a class="contact-tile" href="https://www.linkedin.com/in/peter-tinashe-mundowa-758a2b239/" target="_blank" rel="noopener">
+      <div class="contact-tile-icon">&#128188;</div>
+      <div><div class="contact-tile-label">LinkedIn</div><div class="contact-tile-value">Peter Tinashe Mundowa</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
+    </a>
+    <a class="contact-tile" href="https://github.com/PeterTheDataScientist" target="_blank" rel="noopener">
+      <div class="contact-tile-icon">&#128025;</div>
+      <div><div class="contact-tile-label">GitHub</div><div class="contact-tile-value">PeterTheDataScientist</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
+    </a>
+    <div class="contact-tile" id="email-tile" onclick="revealEmail(this)" style="cursor:pointer;">
+      <div class="contact-tile-icon">&#9993;</div>
+      <div><div class="contact-tile-label">Email</div><div class="contact-tile-value" id="email-val">Click to reveal</div></div>
+      <div class="contact-tile-arrow" style="opacity:1;">&#8594;</div>
+    </div>
+    <a class="contact-tile" href="https://zindi.africa/users/PeterTheAnalyst" target="_blank" rel="noopener">
+      <div class="contact-tile-icon">&#127942;</div>
+      <div><div class="contact-tile-label">Zindi</div><div class="contact-tile-value">Ambassador · Zimbabwe</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
+    </a>
+    <a class="contact-tile" href="https://rightforeducation.org/author/peter-tinashe-mundowa/" target="_blank" rel="noopener">
+      <div class="contact-tile-icon">&#9997;</div>
+      <div><div class="contact-tile-label">R:Ed Zimbabwe</div><div class="contact-tile-value">Author · African tech &amp; education</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
+    </a>
+    <a class="contact-tile" href="cv.pdf" target="_blank">
+      <div class="contact-tile-icon">&#128196;</div>
+      <div><div class="contact-tile-label">Curriculum Vitae</div><div class="contact-tile-value">Download PDF</div></div>
+      <div class="contact-tile-arrow">&#8599;</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&#169; 2026 <span>Peter Tinashe Mundowa</span> · Harare, Zimbabwe &#127481;&#127484;</p>
+  <p>Data Scientist · AI Agent Builder · <span>AI Creative Solutions</span></p>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{cursor.style.left=(e.clientX-5)+'px';cursor.style.top=(e.clientY-5)+'px';});
+document.querySelectorAll('a,.project-card,.writing-card,.stack-item,.achievement-item,.award-card,.cert-card,#email-tile').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('expand'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('expand'));
+});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}
+  });
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function revealEmail(el){
+  const a='peter',b='mundowa',c='25',d='\u0040',e='gmail',f='.',g='com';
+  const addr=a+b+c+d+e+f+g;
+  document.getElementById('email-val').textContent=addr;
+  el.onclick=()=>{window.location.href='mailto:'+addr;};
+}
+</script>
+</body>
+</html>
